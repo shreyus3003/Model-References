@@ -522,13 +522,17 @@ In the main HLS node's docker container:
 This runs 16 Gaudi cards BERT Large pretraining in bfloat16 precision using BooksWiki dataset:
 ```bash
 cd /path/to/Model-References/TensorFlow/nlp/bert/
+
 export MULTI_HLS_IPS="192.10.100.174,10.10.100.101"
+
 python3 demo_bert.py -c pretraining -m large -d bf16 -t bookswiki --dataset_path /software/data/tf/data/bert/books_wiki_en_corpus/tfrecord/ -v 8
 ```
 This runs 16 Gaudi cards BERT Large finetuning in bfloat16 precision using SQuAD dataset:
 ```bash
 cd /path/to/Model-References/TensorFlow/nlp/bert/
+
 export MULTI_HLS_IPS="192.10.100.174,10.10.100.101"
+
 python3 demo_bert.py -c finetuning -m large -d bf16 -v 8 -t squad --output_dir /root/tmp/bert_large --dataset_path /software/data/tf/data/bert/SQuAD
 ```
 
