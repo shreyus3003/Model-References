@@ -118,6 +118,7 @@ The pretraining dataset is 170GB+ and takes 15+ hours to download. The BookCorpu
 
 ```bash
 export PYTHONPATH=/path/to/Model-References/TensorFlow/nlp/bert/:$PYTHONPATH
+
 bash create_datasets_from_start.sh
 ```
 Users are welcome to download BookCorpus from other sources to match our accuracy, or repeatedly try our script until the required number of files are downloaded by running the following:
@@ -150,7 +151,8 @@ In the docker container:
 
 ```bash
 cd /path/to/Model-References/TensorFlow/nlp/bert/
-
+```
+```bash
 python3 demo_bert.py --help
 
 usage: demo_bert.py [-h] -c <command> -d <data_type> -m <model_variant>
