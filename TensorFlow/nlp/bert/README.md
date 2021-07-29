@@ -153,6 +153,7 @@ In the docker container:
 cd /path/to/Model-References/TensorFlow/nlp/bert/
 ```
 ```bash
+# demo_bert.py usage
 python3 demo_bert.py --help
 
 usage: demo_bert.py [-h] -c <command> -d <data_type> -m <model_variant>
