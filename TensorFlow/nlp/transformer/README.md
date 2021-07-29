@@ -202,6 +202,7 @@ python3 decoder.py \
     --decode_from_file=./wmt14.src.tok \
     --decode_to_file=./wmt14.tgt.tok \
     --use_hpu=False
+    
 cat wmt14.tgt.tok | sacremoses detokenize -l de | sacrebleu -t wmt14 -l en-de
 ```
 
