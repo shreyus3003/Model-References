@@ -113,7 +113,7 @@ i. Example: ResNet50 ,lazy mode: bf16 mixed precision, Batch size 256, world-siz
 python3 -u demo_resnet.py  --world-size 8 --batch-size 256 --model resnet50 --device hpu --print-freq 1 --channels-last True --deterministic --data-path /root/software/data/pytorch/imagenet/ILSVRC2012 --mode lazy --epochs 90 --data-type bf16  --custom-lr-values 0.275,0.45,0.625,0.8,0.08,0.008,0.0008 --custom-lr-milestones 1,2,3,4,30,60,80 --dl-time-exclude=False
 
 ii. Example: ResNet50 ,lazy mode: bf16 mixed precision, Batch size 256, world-size 8, custom learning rate, 8x on single HLS1, exclude dataloading time in throughput computation
-```bash
+
 python3 -u demo_resnet.py  --world-size 8 --batch-size 256 --model resnet50 --device hpu --print-freq 1 --channels-last True --deterministic --data-path /root/software/data/pytorch/imagenet/ILSVRC2012 --mode lazy --epochs 90 --data-type bf16  --custom-lr-values 0.275,0.45,0.625,0.8,0.08,0.008,0.0008 --custom-lr-milestones 1,2,3,4,30,60,80 --dl-time-exclude=True
 
 ```
