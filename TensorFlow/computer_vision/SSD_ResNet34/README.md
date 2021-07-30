@@ -124,14 +124,14 @@ python3 demo_ssd.py -e <epoch> -b <batch_size> -d <precison> --model_dir <path/t
 For example:
 
 - The following command will train the topology on single Gaudi, batch size 128, 50 epochs, precision bf16 and remaining default hyperparameters.
-    ```python
+    ```bash
     python3 demo_ssd.py -e 50 -b 128 -d bf16 --model_dir /tmp/ssd_1_hpu
     ```
     Each epoch will take ceil(117266 / 128) = 917 steps so the whole training will take 917 * 50 = 45850 steps.
     Checkpoints will be saved to `/tmp/ssd_1_hpu`.
 
 - The following command will train the topology on single Gaudi, batch size 128, 50 epochs, precision fp32 and remaining default hyperparameters.
-    ```python
+    ```bash
     python3 demo_ssd.py -e 50 -b 128 -d fp32 --model_dir /tmp/ssd_1_hpu
     ```
     Each epoch will take ceil(117266 / 128) = 917 steps so the whole training will take 917 * 50 = 45850 steps.
