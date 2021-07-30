@@ -42,11 +42,11 @@ cd Model-References/PyTorch/computer_vision/ImageClassification/ResNet
 
 ```
 i. Example: ResNet50, lazy mode, bf16 mixed precision, Batch Size 256, Custom learning rate
-```python
+```bash
 python -u demo_resnet.py  --world-size 1 --dl-worker-type MP --batch-size 256 --model resnet50 --device hpu --workers 12 --print-freq 20 --channels-last True --dl-time-exclude False --deterministic --data-path /root/software/data/pytorch/imagenet/ILSVRC2012 --mode lazy --epochs 90 --data-type bf16  --custom-lr-values 0.1,0.01,0.001,0.0001 --custom-lr-milestones 0,30,60,80
 ```
 ii. Example: ResNext101 lazy mode, bf16 mixed precision, Batch size 128, Custom learning rate
-```python
+```bash
 python -u demo_resnet.py  --world-size 1 --dl-worker-type MP --batch-size 128 --model resnext101_32x4d --device hpu --workers 12 --print-freq 20 --channels-last True --dl-time-exclude False --deterministic --data-path /root/software/data/pytorch/imagenet/ILSVRC2012 --mode lazy --epochs 100 --data-type bf16  --custom-lr-values 0.1,0.01,0.001,0.0001 --custom-lr-milestones 0,30,60,80
 ```
 
@@ -109,20 +109,20 @@ service ssh restart
    ```
 
 i. Example: ResNet50 ,lazy mode: bf16 mixed precision, Batch size 256, world-size 8, custom learning rate, 8x on single HLS1, include dataloading time  in throughput computation
-```python
+```bash
 python -u demo_resnet.py  --world-size 8 --batch-size 256 --model resnet50 --device hpu --print-freq 1 --channels-last True --deterministic --data-path /root/software/data/pytorch/imagenet/ILSVRC2012 --mode lazy --epochs 90 --data-type bf16  --custom-lr-values 0.275,0.45,0.625,0.8,0.08,0.008,0.0008 --custom-lr-milestones 1,2,3,4,30,60,80 --dl-time-exclude=False
 
 ii. Example: ResNet50 ,lazy mode: bf16 mixed precision, Batch size 256, world-size 8, custom learning rate, 8x on single HLS1, exclude dataloading time in throughput computation
-```python
+```bash
 python -u demo_resnet.py  --world-size 8 --batch-size 256 --model resnet50 --device hpu --print-freq 1 --channels-last True --deterministic --data-path /root/software/data/pytorch/imagenet/ILSVRC2012 --mode lazy --epochs 90 --data-type bf16  --custom-lr-values 0.275,0.45,0.625,0.8,0.08,0.008,0.0008 --custom-lr-milestones 1,2,3,4,30,60,80 --dl-time-exclude=True
 
 ```
 iii. Example: ResNet50 ,lazy mode: bf16 mixed precision, Batch size 256, world-size 16, custom learning rate, 16x on multiple HLS1, include dataloading time in throughput computation
-```python
+```bash
 MULTI_HLS_IPS="<node1 ipaddr>,<node2 ipaddr>" python -u demo_resnet.py  --world-size 16 --batch-size 256 --model resnet50 --device hpu --workers 4 --print-freq 1 --channels-last True --deterministic --data-path /root/software/data/pytorch/imagenet/ILSVRC2012 --mode lazy --epochs 90 --data-type bf16  --custom-lr-values 0.475,0.85,1.225,1.6,0.16,0.016,0.0016 --custom-lr-milestones 1,2,3,4,30,60,80 --process-per-node 8 --dl-time-exclude=False
 ```
 iv. Example: ResNext101 ,lazy mode: bf16 mixed precision, Batch size 128, world-size 8, single HLS1, include dataloading time in throughput computation
-```python
+```bash
 python -u demo_resnet.py --world-size 8 --batch-size 128 --model resnext101_32x4d --device hpu --print-freq 1 --channels-last True --deterministic --data-path /root/software/data/pytorch/imagenet/ILSVRC2012 --mode lazy --epochs 100 --data-type bf16  --dl-time-exclude=False
 ```
 # Known Issues
