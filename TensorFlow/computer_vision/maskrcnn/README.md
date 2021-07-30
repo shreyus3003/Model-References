@@ -107,7 +107,7 @@ python3 demo_mask_rcnn.py
 
 With exemplary parameters:
 ```bash
-python demo_mask_rcnn.py train --dataset /data -d bf16
+python3 demo_mask_rcnn.py train --dataset /data -d bf16
 ```
 
 Equivalent command using `mask_rcnn_main.py`:
