@@ -173,7 +173,7 @@ The training script fine-tunes BERT base and large model on the [Microsoft Resea
 i. Fine-tune BERT base (Eager mode)
 
 - Run BERT base fine-tuning on the GLUE MRPC dataset using FP32 data type:
-```
+```bash
 python demo_bert.py finetuning --model_name_or_path base --mode eager --task_name mrpc --data_type fp32 --num_train_epochs 3 --batch_size 32 --max_seq_length 128 --learning_rate 2e-5 --do_eval --data_dir <dataset_path>/MRPC
 ```
 - Run BERT base fine-tuning on the SQuAD dataset using FP32 data type:
